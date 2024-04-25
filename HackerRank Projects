@@ -1,0 +1,45 @@
+## HackerRank Projects Portfolio
+
+-Welcome to my HackerRank Projects Portfolio! This repository contains a collection of coding projects that I have completed on HackerRank to enhance my skills in algorithms, data structures, and problem-solving. Each project is a demonstration of my proficiency in tackling various challenges and my ability to apply different programming concepts to solve real-world problems.
+
+## Dataset Description: STATION Table
+
+### Overview:
+The STATION table contains geographical information about various cities. It includes details such as the city name, state, latitude, and longitude coordinates. This dataset is commonly used for geographical analysis and data querying tasks.
+
+### Columns:
+- **id**: Unique identifier for each record in the table.
+- **city**: The name of the city, stored as a variable-length character string (VARCHAR) with a maximum length of 21 characters.
+- **state**: The state abbreviation for the city, stored as a fixed-length character string (VARCHAR2) with a length of 2 characters.
+- **lat_n**: The northern latitude coordinate of the city, stored as a number.
+- **long_w**: The western longitude coordinate of the city, stored as a number.
+  
+
+#1. Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE RIGHT(CITY,1) IN ('a', 'e', 'i', 'o', 'u');
+
+#2.Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(CITY,1) IN ('a', 'e', 'i', 'o', 'u') AND RIGHT(CITY,1) IN ('a', 'e', 'i', 'o', 'u');
+
+#3. Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE  LOWER(LEFT(CITY,1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+#4. Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(RIGHT(CITY,1)) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+
+
+
+
+
+
+
+
